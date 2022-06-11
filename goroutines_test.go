@@ -15,6 +15,7 @@ func HalloNasabah() {
 }
 
 func TestGoroutine(t *testing.T) {
+	// todo: tambahin go untuk lakuin go routine test
 	go RunHelloWord()
 	fmt.Println("Hello")
 
@@ -27,4 +28,15 @@ func TestNasabah(t *testing.T) {
 	fmt.Println("NASABAH ADA")
 
 	time.Sleep(1 * time.Second)
+}
+
+func NomorPolis(number int) {
+	fmt.Println("Nomor Polis", number)
+}
+
+func TestNomorPolis(t *testing.T) {
+	for i := 0; i < 1000000; i++ {
+		go NomorPolis(i)
+	}
+	time.Sleep(5 * time.Second)
 }
