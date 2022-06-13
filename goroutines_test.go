@@ -40,3 +40,15 @@ func TestNomorPolis(t *testing.T) {
 	}
 	time.Sleep(5 * time.Second)
 }
+
+func DataPolis(number int) {
+	fmt.Println("NOMOR TEST : ", number)
+}
+
+func TestDataPolis(t *testing.T) {
+	for i := 0; i < 10000; i++ {
+		go DataPolis(i)
+	}
+
+	time.Sleep(5 * time.Second)
+}
